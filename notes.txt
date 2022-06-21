@@ -1,0 +1,14 @@
+sudo docker run --restart always -d --name bdmariadb2 -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=kkfshafu28r8fa8tr72fbjksf mariadb
+
+
+comando para criar migrations
+npx sequelize migration:create --name=create-users
+realizar todas migrates
+npx sequelize db:migrate
+
+desfazer migrate
+npx sequelize db:migrate:undo
+
+desfazer uma migrate especifica
+npx sequelize db:migrate:undo:all --to 20220618023010-add-age-field-to-users.js
